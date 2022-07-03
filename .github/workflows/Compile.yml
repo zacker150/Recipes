@@ -18,8 +18,11 @@ jobs:
           root_file: "*/recipe.tex"
           glob_root_file: true
           work_in_root_file_dir: true
-              
+      
+      - name: Collect Recipes
+        run: collect.ps1
+        shell: pwsh
+                      
       - uses: actions/upload-artifact@v2
         with:
-          name: Pork Egg Roll.pdf
-          path: Pork Egg Roll/recipe.pdf
+          path: Recipes

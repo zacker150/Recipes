@@ -23,6 +23,6 @@ jobs:
         run: ./collect.ps1
         shell: pwsh
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           path: Recipes

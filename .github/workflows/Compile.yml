@@ -1,0 +1,23 @@
+name: Compile Resume
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Compile Pork Egg Rolls
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: Pork Egg Roll/recipe.tex
+              
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Pork Egg Roll.pdf
+          path: Pork Egg Roll/recipe.pdf

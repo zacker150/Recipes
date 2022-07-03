@@ -12,10 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Compile Pork Egg Rolls
+      - name: Compile Recipes
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: Pork Egg Roll/recipe.tex
+          root_file: */recipe.tex
+          work_in_root_file_dir: true
               
       - uses: actions/upload-artifact@v2
         with:

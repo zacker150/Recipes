@@ -22,6 +22,18 @@ jobs:
       - name: Collect Recipes
         run: ./collect.ps1
         shell: pwsh
+      
+      - name: Push Recipes
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: 'Recipes'
+          destination_repo: 'zacker150/zacker150.github.io'
+          destination_folder: 'Recipes'
+          user_email: 'zacker150@gmail.com'
+          user_name: 'Actions Bot'
+          commit_message: 'Updated Recipes'
 
       - uses: actions/upload-artifact@v3
         with:

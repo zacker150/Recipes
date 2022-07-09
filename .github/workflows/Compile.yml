@@ -1,4 +1,4 @@
-name: Compile Resume
+name: Compile Recipes
 on:
   push:
     branches:

@@ -12,6 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+          
       - name: Compile Recipes
         uses: xu-cheng/latex-action@v2
         with:
@@ -22,13 +26,15 @@ jobs:
       - name: Collect Recipes
         run: ./collect.ps1
         shell: pwsh
+
+      - run: python generate_html.py
       
       - name: Push Recipes
         uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'Recipes'
+          source_file: 'Recipes recipe_links.html'
           destination_repo: 'zacker150/zacker150.github.io'
           user_email: 'zacker150@gmail.com'
           user_name: 'Actions Bot'

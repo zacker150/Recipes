@@ -7,7 +7,7 @@ from urllib import parse
 def write_link(filename: str, outfile: TextIOWrapper) -> None:
     name = path.basename(filename)[0:-4]
     filename = parse.quote(filename)
-    outfile.write(f'<a href="{filename}">{name}</a>\n')
+    outfile.write(f'<a href="{filename}">{name}</a><br />\n')
 
 
 def main() -> None:

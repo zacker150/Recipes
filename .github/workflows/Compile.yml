@@ -31,10 +31,12 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
+          name: Recipes
           path: Recipes
 
       - uses: actions/upload-artifact@v6
         with:
+          name: recipe_links
           path: recipe_links.html
       
       - name: Push Recipes

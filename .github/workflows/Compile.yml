@@ -29,11 +29,11 @@ jobs:
 
       - run: python generate_html.py
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v6
         with:
           path: Recipes
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v6
         with:
           path: recipe_links.html
       
